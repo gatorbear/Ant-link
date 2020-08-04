@@ -1,0 +1,183 @@
+html {
+     scroll-behavior: smooth;
+}
+
+/* Style the navbar */
+#navbar {
+overflow: hidden;
+background-color: #333;
+}
+
+/* Navbar links */
+#navbar a {
+float: right;
+display: block;
+color: #f2f2f2;
+text-align: center;
+padding: 1em;
+text-decoration: none;
+}
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+position: fixed;
+top: 0;
+width: 100%;
+}
+
+/* Page content */
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+padding-top: 1em;
+}
+
+section h1{
+     text-align: center;
+     font-size: 3em;
+     line-height: 3em;
+}
+body {
+     font-family: Arial, Helvetica, sans-serif;
+     text-align: justify;
+     font-size: 1.25em;
+     margin: 0em;
+     height: 100%;
+     overflow-y: hidden;
+}
+
+body img {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.link {
+     margin-top: 4em;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+}
+.link input {
+     height: 2em;
+     width: calc(100% - 8em);
+}
+
+article {
+     scroll-snap-type: y proximity;
+     overflow-y: scroll;
+     scroll-behavior: smooth;
+     display: flex;
+     flex-flow: column;
+     height: 100%; 
+   }
+section > div {
+     margin: auto;
+     width: 75%;
+}
+
+
+article section {
+     padding: 5em;
+     /* Snap align start. */
+     scroll-snap-align: start;
+     min-height: calc(100vh - 0em);
+     max-height: calc(100vh - 0em);
+}
+
+article section:nth-child(odd) {
+     background-color: #f2f2f2;
+}
+
+section img {
+     max-width: 30vw;
+}
+
+
+
+article section#main-screen {
+     background-color: #5B359D;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+#about {
+     background-color: #ffffff;
+}
+
+.link button {
+     max-width: 4em;
+}
+
+button {
+     border: none;
+     border-radius: 8px;
+     color: #000000;
+     font-size: 1em;
+     background: #e5e5e5;
+     padding: .25em .5em;
+     text-decoration: none;
+}
+  
+button:hover {
+     background: #f2f2f2;
+     text-decoration: none;
+}
+
+tr:nth-child(even) {
+     background-color: #f2f2f2;
+}
+
+th {
+     background-color: #5B359D;
+     color: white;
+   }
+
+tr:hover {background-color: #91a6b4;}
+
+/* Tooltip container */
+.tooltip {
+     position: relative;
+     display: inline-block;
+     border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+   }
+   
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
